@@ -53,7 +53,7 @@ class EventServiceTest {
     @Test
     fun shouldHandleNewUserEventAndAddToDb() {
         val uuid = UUID.randomUUID()
-        val event = mapOf("target" to uuid)
+        val event = mapOf("source" to uuid)
 
         kafkaTemplate.send("user-events", "TEST", event)
 
@@ -65,7 +65,7 @@ class EventServiceTest {
                 println("test")
                 assertEquals(events.size, 1)
                 val event = events.first()
-                assertEquals(event.target, uuid)
+                assertEquals(event.source, uuid)
                 assertEquals(event.type, "TEST")
             }
     }
