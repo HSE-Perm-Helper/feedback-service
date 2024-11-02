@@ -20,7 +20,7 @@ class EventService(
     ) {
         val newEvent = Event(
             type = key,
-            target = payload.target,
+            source = payload.source,
             timestamp = LocalDateTime.now()
         )
 

@@ -20,7 +20,7 @@ data class Event(
     val type: String,
 
     @Column
-    val target: UUID,
+    val source: UUID,
 
     @Column
     val timestamp: LocalDateTime,
