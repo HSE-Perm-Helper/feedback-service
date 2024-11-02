@@ -4,7 +4,7 @@ eureka:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/users_service
+    url: jdbc:postgresql://localhost:5432/feedback-service
     username: root
     password: root
 
