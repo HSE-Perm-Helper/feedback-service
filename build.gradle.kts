@@ -60,3 +60,11 @@ kotlin {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.jar {
+    archiveFileName.set("feedback-service.jar")
+}
+
+tasks.bootJar {
+    archiveFileName.set("feedback-service-standalone.jar")
+}
