@@ -1,0 +1,15 @@
+eureka:
+  client:
+    enabled: false
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/users_service
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+server:
+  port: 8082

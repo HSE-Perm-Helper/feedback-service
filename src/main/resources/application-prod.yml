@@ -1,0 +1,6 @@
+server:
+  port: 0
+eureka:
+  client:
+    service-url:
+      defaultZone: ${SERVICE_DISCOVERY_URL}
