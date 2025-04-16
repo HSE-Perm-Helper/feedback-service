@@ -4,7 +4,7 @@ services:
     image: melowetty/feedback-service
     depends_on:
       - postgresdb
-    env_file: ./.env
+    env_file: .env
     environment:
       - SPRING_PROFILES_ACTIVE=$ACTIVE_PROFILE
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresdb:$POSTGRESDB_DOCKER_PORT/$DB_NAME
@@ -16,10 +16,12 @@ services:
       - internal
       - api-gateway_backend
       - message-broker_shared
+    expose:
+      - $SERVER_PORT
   postgresdb:
     image: postgres
     restart: unless-stopped
-    env_file: ./.env
+    env_file: .env
     environment:
       - POSTGRES_USER=$DB_USERNAME
       - POSTGRES_PASSWORD=$DB_PASSWORD
