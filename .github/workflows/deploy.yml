@@ -14,10 +14,10 @@ jobs:
         with:
           host: ${{ secrets.DEPLOY_SERVER_HOST }}
           username: ${{ secrets.DEPLOY_SERVER_USER }}
-          password: ${{ secrets.DEPLOY_SERVER_PASSWORD }}
+          key: ${{ secrets.DEPLOY_SERVER_KEY }}
           script: |
-            cd /projects/feedback-service
+            cd services/feedback-service
             git pull
             docker pull melowetty/feedback-service
-            docker-compose up -d
+            docker compose up -d
             docker system prune --all --force
